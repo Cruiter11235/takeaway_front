@@ -1,0 +1,10 @@
+/* pages/welcome/welcome.wxss */
+.container{
+  width: auto;
+  height: 1000px;
+}
+.l-form-btn-class{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10rpx;
+}
