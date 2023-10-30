@@ -5,40 +5,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    student: {
-      name: '',
-      age: '',
-      address: ''
-    },
+    logininfo:{
+      username:"",
+      password:""
+    }
   },
   submit(event){
-    const {detail} = event;
-    /*
-      detail 返回三个参数
-      1、values: 各表单项的value值
-      2、errors: 各表单项验证后的返回的错误信息数组
-      3、isValidate: 表单是否验证通过的boolean值
-      具体格式示例：
-      detail = {
-         values: {
-             studentName: "",
-             studentAge: "",
-             studentAddress: ""
-         },
-         errors: {
-             studentName: [],
-             studentAge: [],
-             studentAddress: []
-         },
-         isValidate: true
-      }
-    */
+    const {detail:{values}} = event;
+    console.log(values);
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    wx.lin.initValidateForm(this);
   },
 
   /**
