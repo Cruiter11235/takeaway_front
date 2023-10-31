@@ -1,0 +1,4 @@
+/* components/userpage1/userpage1.wxss */
+.field-class{
+  width:100px !important;
+}

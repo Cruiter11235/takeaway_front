@@ -1,0 +1,13 @@
+<!--components/userpage1/userpage1.wxml-->
+<view style="width: 80%;margin:auto;overflow: hidden;" >
+<van-search
+  value="{{ value }}"
+  placeholder="请输入搜索关键词"
+  use-action-slot
+  bind:change="onChange"
+  bind:search="onSearch"
+  shape="round"
+>
+  <view slot="action" bind:tap="onClick" style="z-index: 999;background-color: red;width: 50px;text-align: center;border-radius: 50%;;">搜索</view>
+</van-search>
+</view>
