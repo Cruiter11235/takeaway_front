@@ -18,7 +18,6 @@ Page({
     wx.navigateTo({
       url: '/pages/userindex/userindex',
     })
-    console.log(this.data.password, this.data.username)
   },
   /**
    * 生命周期函数--监听页面加载

@@ -1,0 +1,30 @@
+<!--components/comment/comment.wxml-->
+<view class="commentcard">
+  <view class="userline">
+    <image class="userimg" src="{{info.usericon}}"></image>
+    <view class="commentinfo">
+      <view style="display: flex;flex-direction: row;align-items: center;">
+        <view style="width: 80%;">
+          <text style="margin-left: 3px;">{{info.username}}</text>
+        </view>
+        <view style="width: 20%;">
+          <text style="margin-top: 3px;font-size: 10px;">{{info.time}}</text>
+        </view>
+      </view>
+      <view style="margin-top: 8px; display: flex;flex-direction: row;align-items: center;">
+        <van-rate readonly value="{{info.score}}" size="15" />
+        <text style="font-size: 10px;margin-top: 6px;margin-left: 5px;">{{info.arrivetime}}分钟送达</text>
+      </view>
+    </view>
+  </view>
+  <view class="commentarea">
+    <view class="textarea">
+      <text>{{info.comment}}</text>
+    </view>
+    <view class="imgarea" >
+      <view wx:for="{{info.imgurls}}" wx:key="{{info.id}}">
+        <van-image width="80" height="80" fit="contain" src="{{item}}" />
+      </view>
+    </view>
+  </view>
+</view>

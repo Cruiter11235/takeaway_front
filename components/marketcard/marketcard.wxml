@@ -1,0 +1,16 @@
+<!--components/marketcard/marketcard.wxml-->
+<view class="mcard" bind:tap="goshop">
+<view style="width: 100px;height: 100px;display: flex;justify-content: center;align-items: center;">
+<image class="mimg" src="{{info.url}}" ></image>
+</view>
+<view class="cright" >
+<text class="title">{{info.name}}</text>
+<view class="desp">
+<text style="color: orange;">{{info.score}}分</text>
+<text style="font-size: 10px;">月售{{info.sellcount}}</text>
+<text style="font-size: 10px;">人均￥{{info.avecost}}</text>
+<text style="font-size: 10px;">起送￥{{info.mincost}}</text>
+<text style="font-size: 10px;">配送￥{{info.twcost}}</text>
+</view>
+</view>
+</view>

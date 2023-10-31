@@ -1,0 +1,47 @@
+/* components/comment/comment.wxss */
+.commentcard{
+  margin: auto;
+  margin-top:10px;
+  height: 200px;
+  width: 95%;
+  background-color: white;
+  border-radius: 10px;
+}
+.userline{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 30%;
+  /* background-color: red; */
+}
+.userimg{
+  border-radius: 50%;
+  margin-left: 5px;
+  width: 50px;
+  height: 50px;
+}
+.commentinfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin-left: 5px;
+  width: calc(100% - 60px);
+  height: 100%;
+  /* background-color: green; */
+}
+.commentarea{
+  width: 100%;
+  height: 70%;
+  /* background-color: yellow; */
+}
+.textarea{
+  width: 100%;
+  height: 30%;
+  margin-left: 5px;
+}
+.imgarea{
+  margin-left: 5px;
+  display: flex;
+  flex-direction: row;
+}

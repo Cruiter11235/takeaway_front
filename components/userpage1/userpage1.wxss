@@ -1,4 +1,27 @@
 /* components/userpage1/userpage1.wxss */
-.field-class{
-  width:100px !important;
+.SearchButton{
+  background-color: #ffcc00;
+  width: 60px;
+  height: 35px;
+  border-radius: 10px;
+  position: absolute;
+  right:50px;
+  top: 9px;
+  text-align: center;
+  line-height: 35px;
+}
+.classify{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 90%;
+  height: 260px;
+  background-color: #DCDCDC;
+}
+.marketlist{
+  margin: 10px auto;
+  width: 90%;
+  background-color: #DCDCDC;
+  /* background-color: blue; */
 }

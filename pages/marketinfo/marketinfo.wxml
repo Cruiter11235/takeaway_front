@@ -1,0 +1,26 @@
+<!--pages/marketinfo/marketinfo.wxml-->
+<view style="width: 100vw;height: 100vh;">
+  <view style="width: 100%;height: 10%;background-color: grey;"></view>
+  <view style="width: 100%;height:90%;">
+    <van-tabs animated bind:click="onChange">
+      <van-tab title="点菜">
+        <view style="position: fixed;width: 100%;height:70%;overflow: scroll;top: 18%;bottom: 0;background-color: #DCDCDC;" wx:if="{{activekey==0}}">
+          <view wx:for="{{foodlist}}">
+            <f-card bind:changeprice="changeprice" info="{{item}}"></f-card>
+          </view>
+        </view>
+      </van-tab>
+      <van-tab title="评价" style="background-color: #DCDCDC;">
+      <view style="position: fixed;width: 100%;height:83%;overflow: scroll;top: 18%;bottom: 0;background-color: #DCDCDC;" wx:if="{{activekey==1}}">
+      <view wx:for="{{commentlist}}">
+      <comment info="{{item}}"></comment>
+      <van-divider />
+      </view>
+      </view>
+      </van-tab>
+    </van-tabs>
+  </view>
+  <view style="width: 100%;height: 80px;position: fixed;bottom: 0px;" wx:if="{{activekey==0}}">
+    <van-submit-bar price="{{ pricesum }}" button-text="提交订单" bind:submit="onSubmit" />
+  </view>
+</view>

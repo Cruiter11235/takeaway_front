@@ -1,0 +1,8 @@
+/* pages/marketinfo/marketinfo.wxss */
+.shopcar{
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 100px;
+  /* background-color: red; */
+}

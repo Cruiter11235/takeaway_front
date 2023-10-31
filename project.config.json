@@ -5,6 +5,7 @@
     "include": []
   },
   "setting": {
+    "ignoreDevUnusedFiles": true,
     "bundle": false,
     "userConfirmedBundleSwitch": false,
     "urlCheck": true,
