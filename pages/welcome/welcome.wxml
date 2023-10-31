@@ -1,21 +1,11 @@
 <!--pages/welcome/welcome.wxml-->
-<view class="container">
-<l-form name="student" l-form-btn-class="l-form-btn-class" bind:linsubmit="submit">
-    <l-form-item label="用户名:" name="username">
-        <l-input id="username" value="{{student.name}}" hide-label show-row="{{false}}"/>
-    </l-form-item>
-
-    <l-form-item label="密码:" name="password">
-        <l-input id="password" value="{{student.age}}" hide-label show-row="{{false}}"/>
-    </l-form-item>
-
-    <view slot="submit">
-        <l-button bind:tap="submit">提交</l-button>
-    </view>
-    <view slot="reset">
-        <l-button type="default" plain>重置</l-button>
-    </view>
-</l-form>
-
-{{}}
+<view class="container" style="height: 100vh;width: 100vw;">
+  <view id="inputArea" style="height: 100%;display: flex;flex-direction: column;justify-content: center;align-items: center;width: 70%;">
+  <text style="margin-bottom: 10px;color:grey;">外卖点餐系统</text>
+      <van-field label="用户名" model:value="{{ username }}" placeholder="请输入用户名" border="{{ true }}" />
+      <van-field label="密码" model:value="{{ password }}" placeholder="密码" border="{{ true }}"  style="margin-top: 5px;" />
+      <van-button type="primary" style="position: relative;top: 50px;" round
+      color="linear-gradient(to right, #4bb0ff, #6149f6)" bind:tap="login">登录</van-button>
+  </view>
+  <van-notify id="van-notify" />
 </view>

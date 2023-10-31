@@ -1,8 +1,12 @@
 {
   "usingComponents": {
-    "l-button":"/miniprogram_npm/lin-ui/button",
-    "l-form":"/miniprogram_npm/lin-ui/form",
-    "l-form-item":"/miniprogram_npm/lin-ui/form-item",
-    "l-input":"/miniprogram_npm/lin-ui/input"
-  }
+    "van-row": "/miniprogram_npm/@vant/weapp/row/index",
+    "van-col": "/miniprogram_npm/@vant/weapp/col/index",
+    "van-field": "/miniprogram_npm/@vant/weapp/field/index",
+    "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+    "van-cell-group": "/miniprogram_npm/@vant/weapp/cell-group/index",
+    "van-button": "/miniprogram_npm/@vant/weapp/button/index",
+    "van-notify": "@vant/weapp/notify/index"
+  },
+  "navigationBarTitleText": "登录"
 }

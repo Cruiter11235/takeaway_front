@@ -1,0 +1,10 @@
+<!--pages/userindex/userindex.wxml-->
+<view wx:if="{{active==0}}">0</view>
+<view wx:if="{{active==1}}">1</view>
+<view wx:if="{{active==2}}">2</view>
+<view wx:if="{{active==3}}">3</view>
+<van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item icon="home-o">首页</van-tabbar-item>
+  <van-tabbar-item icon="search" info="5">订单</van-tabbar-item>
+  <van-tabbar-item icon="setting-o" info="20">我的</van-tabbar-item>
+</van-tabbar>

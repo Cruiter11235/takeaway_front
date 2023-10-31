@@ -1,26 +1,29 @@
 // pages/welcome/welcome.js
+import Notify from '@vant/weapp/notify/notify';
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    logininfo:{
-      username:"",
-      password:""
+    username: "",
+    password: ""
+  },
+  login() {
+    if(this.data.username === "" || this.data.password === ""){
+      Notify("输入不合法");
+      return;
     }
+    wx.navigateTo({
+      url: '/pages/userindex/userindex',
+    })
+    console.log(this.data.password, this.data.username)
   },
-  submit(event){
-    const {detail:{values}} = event;
-    console.log(values);
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
-    wx.lin.initValidateForm(this);
-  },
+  onLoad(options) {},
 
   /**
    * 生命周期函数--监听页面初次渲染完成
