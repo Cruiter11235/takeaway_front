@@ -3,11 +3,13 @@
     "pages/welcome/welcome",
     "pages/index/index",
     "pages/userindex/userindex",
-    "pages/marketinfo/marketinfo"
+    "pages/marketinfo/marketinfo",
+    "pages/favlist/favlist",
+    "pages/stuffindex/stuffindex"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#ffdb38",
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black"
   },

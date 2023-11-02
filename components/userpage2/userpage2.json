@@ -1,4 +1,7 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "ocard":"/components/ordercard/ordercard"
+  },
+  "navigationBarBackgroundColor": "#ffdb38"
 }

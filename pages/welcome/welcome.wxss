@@ -1,4 +1,4 @@
 /* pages/welcome/welcome.wxss */
 .container {
-  background-image: linear-gradient(106.5deg, rgba(255, 215, 185, 0.91) 23%, rgba(223, 159, 247, 0.8) 93%);
+  background-image: linear-gradient(106.5deg, rgba(255, 215, 185, 0.91) 23%, rgba(255, 219, 56, 1) 93%);
 }

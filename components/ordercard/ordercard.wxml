@@ -1,0 +1,20 @@
+<!--components/ordercard/ordercard.wxml-->
+<view class="ocard">
+  <view class="top">
+    <van-image width="30" height="30" src="https://img.yzcdn.cn/vant/cat.jpeg" style="margin-left: 10px;" />
+    <text style="margin-left: 10px;">ewadawd</text>
+    <van-tag color="#7232dd" plain style="margin-left: 20px;">状态</van-tag>
+    <text style="position: absolute;right:30px;">总计100元</text>
+  </view>
+  <van-divider />
+
+  <view class="middle">
+  <text wx:for="{{10}}">脆皮鸡拌饭 x{{1}}</text>
+  </view>
+  <van-divider />
+
+  <view class="bottom">
+    <van-button size="mini" style="margin-right: 10px;" plain hairline>再来一单</van-button>
+    <van-button color="#ffdb38" size="mini" style="margin-right: 10px;"><text style="color: black;">评价</text></van-button>
+  </view>
+</view>

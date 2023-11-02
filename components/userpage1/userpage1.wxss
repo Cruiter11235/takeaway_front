@@ -20,7 +20,7 @@
   background-color: #DCDCDC;
 }
 .marketlist{
-  margin: 10px auto;
+  margin: 10px auto auto;
   width: 90%;
   background-color: #DCDCDC;
   /* background-color: blue; */

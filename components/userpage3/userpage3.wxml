@@ -1,2 +1,73 @@
-<!--components/userpage3/userpage3.wxml-->
-<text>components/userpage3/userpage3.wxml</text>
+<view style="width: 100%;">
+<view class="top">
+  <van-image
+  width="80px"
+  height="80px"
+  fit="cover"
+  src="https://img.yzcdn.cn/vant/cat.jpeg"
+  round
+  style="margin-left: 20px;"
+/>
+<view class="textbox">
+<text style="font-size: 20px;">{{username}}</text>
+<text style="font-size: 15px;font-family:Arial, Helvetica, sans-serif;margin-top: 5px;">{{phone_number}}</text>
+</view>
+</view>
+<view class="middle"></view>
+<view class="bottom">
+  <van-cell-group>
+  <van-field
+    readonly="{{location_on_editing}}"
+    model:value="{{ location }}"
+    center
+    label="地址"
+    border="{{ false }}"
+    use-button-slot
+    left-icon="location-o"
+  >
+    <van-button slot="button" size="small" type="{{location_on_editing?'primary':'danger'}}" bind:tap="edit_username">
+      <text wx:if="{{location_on_editing}}">编辑</text>
+      <text wx:else>确认</text>
+    </van-button>
+  </van-field>
+
+  <van-field
+    model:value="{{username}}"
+    label="用户名"
+    left-icon="contact"
+    disabled
+    border="{{ false }}"
+  />
+
+  <van-field
+    readonly="{{pn_on_editing}}"
+    model:value="{{ phone_number }}"
+    center
+    label="电话号码"
+    border="{{ false }}"
+    use-button-slot
+    left-icon="phone-circle-o"
+  >
+    <van-button slot="button" size="small" type="{{pn_on_editing?'primary':'danger'}}" bind:tap="edit_pn">
+      <text wx:if="{{pn_on_editing}}">编辑</text>
+      <text wx:else>确认</text>
+    </van-button>
+  </van-field>
+
+  <van-field
+    readonly="{{name_on_editing}}"
+    model:value="{{ name }}"
+    center
+    label="称呼"
+    border="{{ false }}"
+    use-button-slot
+    left-icon="user-o"
+  >
+    <van-button slot="button" size="small" type="{{name_on_editing?'primary':'danger'}}" bind:tap="edit_name">
+      <text wx:if="{{name_on_editing}}">编辑</text>
+      <text wx:else>确认</text>
+    </van-button>
+  </van-field>
+</van-cell-group>
+</view>
+</view>

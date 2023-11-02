@@ -1,36 +1,30 @@
-// pages/welcome/welcome.js
-import Notify from '@vant/weapp/notify/notify';
-
+// pages/favlist/favlist.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    username: "",
-    password: ""
+    favmlist:[]
   },
-  login() {
-    if (this.data.username === "" || this.data.password === "") {
-      Notify("输入不合法");
-      return;
-    }
-    // 角色分支跳转逻辑
-    if (this.data.username != "stuff") {
-      wx.navigateTo({
-        url: '/pages/userindex/userindex',
-      })
-    }else{
-      wx.navigateTo({
-        url: '/pages/stuffindex/stuffindex',
-      })
-    }
-
+  getdata(){
+    let that = this;
+    wx.request({
+      url: 'http://localhost:3000/favlist',
+      success(res){
+        that.setData({
+          favmlist:res.data
+        })
+      }
+    });
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {},
+  onLoad(options) {
+    console.log(options.key)
+    this.getdata();
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

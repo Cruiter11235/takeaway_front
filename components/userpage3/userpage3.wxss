@@ -1,1 +1,28 @@
-/* components/userpage3/userpage3.wxss */
+.top {
+  height: 100px;
+  background-color: #ffdb38;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.bottom {
+  height: 200px;
+  /* background-color: teal; */
+}
+
+.middle {
+  width: 100%;
+  height: 5px;
+  background-color: lightgray;
+}
+
+.textbox {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  height: 80px;
+  width: 50px;
+  /* background-color: red; */
+}

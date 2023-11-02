@@ -1,1 +1,9 @@
 /* components/userpage2/userpage2.wxss */
+.top{
+  height: 50%;
+  /* background-color: yellow; */
+}
+.bottom{
+  height: 30%;
+  /* background-color: teal; */
+}

@@ -6,5 +6,6 @@
     "userpage1":"/components/userpage1/userpage1",
     "userpage2":"/components/userpage2/userpage2",
     "userpage3":"/components/userpage3/userpage3"
-  }
+  },
+  "navigationBarBackgroundColor": "#ffdb38"
 }

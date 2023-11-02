@@ -5,7 +5,7 @@
     <van-tabs animated bind:click="onChange">
       <van-tab title="点菜">
         <view style="position: fixed;width: 100%;height:70%;overflow: scroll;top: 18%;bottom: 0;background-color: #DCDCDC;" wx:if="{{activekey==0}}">
-          <view wx:for="{{foodlist}}">
+          <view wx:for="{{foodlist}}" wx:key="id">
             <f-card bind:changeprice="changeprice" info="{{item}}"></f-card>
           </view>
         </view>

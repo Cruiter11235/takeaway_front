@@ -1,2 +1,6 @@
 <!--components/userpage2/userpage2.wxml-->
-<text>components/userpage2/userpage2.wxml</text>
+<view style="width: 100%;background-color: #d6d6d6;">
+<view wx:for="{{10}}" wx:key="id">
+<ocard></ocard>
+</view>
+</view>

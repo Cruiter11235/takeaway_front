@@ -1,0 +1,6 @@
+<!--pages/favlist/favlist.wxml-->
+<view style="display: flex;flex-direction: column;background-color:#DCDCDC;width: 100%;align-items: center;">
+  <view wx:for="{{favmlist}}" wx:key="id" style="width: 95%;">
+    <mcard info="{{item}}"></mcard>
+  </view>
+</view>
