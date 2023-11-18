@@ -1,13 +1,16 @@
-// pages/stuffindex/stuffindex.js
+// stuffpages/stuffindex/stuffindex.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    active: 0,
   },
-
+  onChange(event) {
+    // event.detail 的值为当前选中项的索引
+    this.setData({ active: event.detail });
+  },
   /**
    * 生命周期函数--监听页面加载
    */

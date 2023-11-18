@@ -1,0 +1,14 @@
+<view wx:if="{{active==0}}">
+<stuffpage1></stuffpage1>
+</view>
+<view wx:if="{{active==1}}">
+<stuffpage2></stuffpage2>
+</view>
+<view wx:if="{{active==2}}">
+<stuffpage3></stuffpage3>
+</view>
+<van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item icon="cash-back-record-o">所有订单</van-tabbar-item>
+  <van-tabbar-item icon="search">已接取</van-tabbar-item>
+  <van-tabbar-item icon="contact-o">我的</van-tabbar-item>
+</van-tabbar>

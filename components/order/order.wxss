@@ -1,0 +1,27 @@
+/* components/order/order.wxss */
+.foldedclass{
+  display: none;
+}
+.unfoldedclass{
+  animation-name: extend ;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  width: 100%;
+}
+
+@keyframes extend {
+  0% {
+    background-color: white;
+    height: 0px;
+    overflow: hidden;
+  }
+  100% {
+    background-color: #ecffb3;
+    height: 100px;
+    overflow: scroll;
+  }
+}
+.infocontent{
+  border: 3rpx thin black;
+  background-color: #ffe5b3;
+}

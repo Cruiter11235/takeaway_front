@@ -1,0 +1,5 @@
+<view wx:for="{{10}}" wx:key="id">
+<order>
+  <van-button size="small">接单</van-button>
+</order>
+</view>

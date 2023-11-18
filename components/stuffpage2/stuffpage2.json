@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "order":"/components/order/order",
+    "van-button": "@vant/weapp/button/index"
+  }
+}

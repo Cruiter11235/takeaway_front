@@ -8,7 +8,7 @@
   <view class="classify">
     <view style="width: 100%;">
       <van-grid column-num="4">
-        <van-grid-item use-slot wx:for="{{ classlist }}" wx:key="id" link-type="navigateTo" url="/pages/favlist/favlist?key={{item.text}}">
+        <van-grid-item use-slot wx:for="{{ classlist }}" wx:key="id" link-type="navigateTo" url="/userpages/pages/favlist/favlist?key={{item.text}}">
           <image style="width: 100%; height: 60px;" src="{{item.url}}" />
           {{item.text}}
         </van-grid-item>

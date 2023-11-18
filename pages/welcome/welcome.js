@@ -18,11 +18,11 @@ Page({
     // 角色分支跳转逻辑
     if (this.data.username != "stuff") {
       wx.navigateTo({
-        url: '/pages/userindex/userindex',
+        url: '/userpages/pages/userindex/userindex',
       })
     }else{
       wx.navigateTo({
-        url: '/pages/stuffindex/stuffindex',
+        url: '/stuffpages/pages/stuffindex/stuffindex',
       })
     }
 

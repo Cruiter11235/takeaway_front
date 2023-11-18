@@ -1,11 +1,6 @@
 {
   "pages": [
-    "pages/welcome/welcome",
-    "pages/index/index",
-    "pages/userindex/userindex",
-    "pages/marketinfo/marketinfo",
-    "pages/favlist/favlist",
-    "pages/stuffindex/stuffindex"
+    "pages/welcome/welcome"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -13,5 +8,26 @@
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "subPackages": [
+    {
+      "root": "userpages",
+      "pages": [
+        "pages/userindex/userindex",
+        "pages/favlist/favlist"
+      ]
+    },
+    {
+      "root": "mainpages",
+      "pages": [
+        "pages/marketinfo/marketinfo"
+      ]
+    },
+    {
+      "root": "stuffpages",
+      "pages": [
+        "pages/stuffindex/stuffindex"
+      ]
+    }
+  ]
 }

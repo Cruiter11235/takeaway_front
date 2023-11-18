@@ -1,11 +1,11 @@
-// components/marketcard/marketcard.js
+// components/stuffpage2/stuffpage2.js
 Component({
 
   /**
    * 组件的属性列表
    */
   properties: {
-    info:Object
+
   },
 
   /**
@@ -19,10 +19,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    goshop(){
-      wx.navigateTo({
-        url: '/mainpages/pages/marketinfo/marketinfo',
-      })
-    }
+
   }
 })
