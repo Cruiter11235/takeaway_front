@@ -1,5 +1,5 @@
 <!--components/foodcard/foodcard.wxml-->
-<van-card num="{{count}}" tag="" price="{{info.price}}" desc="{{info.description}}" title="{{info.title}}" thumb="{{ info.url }}">
+<van-card num="{{count}}" tag="" price="{{info.price}}"title="{{info.title}}" thumb="{{ info.url }}">
   <view slot="footer">
     <van-button round size="mini" type="info" bind:tap="addcount">+</van-button>
     <van-button round size="mini" type="info" bind:tap="minuscount">-</van-button>

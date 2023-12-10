@@ -1,5 +1,5 @@
-<view wx:for="{{3}}">
-<order>
-  <van-button size="small">完成</van-button>
+<view wx:for="{{dt}}">
+<order dt="{{item}}">
+  <van-button size="small" id="o>{{item.o_id}}" bind:tap="finishOrder">完成</van-button>
 </order>
 </view>

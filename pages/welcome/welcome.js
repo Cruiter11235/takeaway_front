@@ -10,11 +10,31 @@ Page({
     username: "",
     password: ""
   },
+  saveData(k,v){
+    wx.setStorageSync(k, v);
+  },
   login() {
     if (this.data.username === "" || this.data.password === "") {
       Notify("输入不合法");
       return;
     }
+    const that = this;
+    // 测试，获取顾客信息
+    wx.request({
+      url: 'http://localhost:3000/userinfo',
+      success(res){
+        console.log(res.data);
+        that.saveData("c_id",res.data.c_id);
+      }
+    })
+    //测试，获取外卖员信息
+    wx.request({
+      url: 'http://localhost:3000/deliveryinfo',
+      success(res){
+        console.log(res.data);
+        that.saveData("d_id",res.data.d_id);
+      }
+    })
     // 角色分支跳转逻辑
     if (this.data.username != "stuff") {
       wx.navigateTo({

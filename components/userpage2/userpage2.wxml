@@ -1,6 +1,6 @@
 <!--components/userpage2/userpage2.wxml-->
 <view style="width: 100%;background-color: #d6d6d6;">
-<view wx:for="{{10}}" wx:key="id">
-<ocard></ocard>
+<view wx:for="{{OrderList}}" wx:key="d_username">
+<ocard dt="{{item}}"></ocard>
 </view>
 </view>

@@ -12,7 +12,6 @@ Component({
    */
   data: {
     searchvalue:"",
-    marketlist:[{id:1},{id:2},{id:3},{id:4},{id:5}],
     classlist:[],
     marketlist:[]
   },
@@ -24,6 +23,7 @@ Component({
     search(){
       console.log(this.data.searchvalue);
     },
+    // 拉取商家数据
     getdata(){
       let that = this;
       wx.request({
@@ -39,6 +39,7 @@ Component({
         url: 'http://localhost:3000/marketlist',
         success(res){
           let data = res.data;
+          console.log(data);
           that.setData({
             marketlist:data
           })

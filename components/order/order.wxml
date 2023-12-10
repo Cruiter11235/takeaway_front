@@ -2,23 +2,23 @@
 <view style="width: 98%;margin:auto;margin-bottom: 30px;">
 <view style="width: 100%;height: auto;display: flex;flex-direction: column;">
   <view style="display: flex;flex-direction: row;">
-    <view style="width: 50%;" class="infocontent">商家电话:12345678</view>
-    <view style="width: 50%;" class="infocontent">商家地址:四川大学</view>
+    <view style="width: 50%;" class="infocontent">商家电话:{{dt.m_phone}}</view>
+    <view style="width: 50%;" class="infocontent">商家地址:{{dt.m_address}}</view>
   </view>
   <view style="display: flex;flex-direction: row;">
-    <view style="width: 50%;" class="infocontent">顾客电话:15258285</view>
-    <view style="width: 50%;" class="infocontent">顾客地址:四川大学</view>
+    <view style="width: 50%;" class="infocontent">顾客电话:{{dt.c_phone}}</view>
+    <view style="width: 50%;" class="infocontent">顾客地址:{{dt.c_address}}</view>
   </view>
   <view style="display: flex;flex-direction: row;">
-    <view style="width: 50%;" class="infocontent">商家:蜜雪冰城</view>
-    <view style="width: 50%;" class="infocontent">顾客:王先生</view>
+    <view style="width: 50%;" class="infocontent">商家:{{dt.m_name}}</view>
+    <view style="width: 50%;" class="infocontent">顾客:{{dt.c_name}}</view>
   </view>
 </view>
 <view style="background-color: #dfff80;width: 100%;height: 10px;align-items: center;justify-content: center;display: flex;">
   <van-button bind:tap="changeState" size="mini">{{folded?"展开":"折叠"}}</van-button>
 </view>
 <view class="{{folded?foldedclass:unfoldedclass}}">
-  <View wx:for="{{10}}">汉堡-数量1</View>
+  <View wx:for="{{dt.foodlist}}">{{item.f_name}}x{{item.count}}</View>
 </view>
 <view style="width: 100%;height: 40px;display: flex;align-items: center;justify-content: flex-end;background-color: #dfff80;">
   <!-- <van-button size="small">接单</van-button> -->

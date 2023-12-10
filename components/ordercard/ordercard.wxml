@@ -2,19 +2,38 @@
 <view class="ocard">
   <view class="top">
     <van-image width="30" height="30" src="https://img.yzcdn.cn/vant/cat.jpeg" style="margin-left: 10px;" />
-    <text style="margin-left: 10px;">ewadawd</text>
-    <van-tag color="#7232dd" plain style="margin-left: 20px;">状态</van-tag>
-    <text style="position: absolute;right:30px;">总计100元</text>
+    <view style="margin-left: 10px;" bind:tap="toMerchant">{{dt.m_name}}</view>
+    <van-tag color="#7232dd" plain style="margin-left: 20px;">{{dt.status}}</van-tag>
+    <text style="position: absolute;right:30px;">总计{{dt.total_price}}元</text>
   </view>
   <van-divider />
 
   <view class="middle">
-  <text wx:for="{{10}}">脆皮鸡拌饭 x{{1}}</text>
+    <text wx:for="{{dt.food_list}}">
+      {{item.f_name}}x{{item.count}}
+    </text>
   </view>
   <van-divider />
 
   <view class="bottom">
-    <van-button size="mini" style="margin-right: 10px;" plain hairline>再来一单</van-button>
-    <van-button color="#ffdb38" size="mini" style="margin-right: 10px;"><text style="color: black;">评价</text></van-button>
+    外卖员:{{dt.d_username}} 电话:{{dt.d_phone}}
+    <van-button color="#ffdb38" size="mini" style="margin-right: 10px;" bind:tap="createComment"><text style="color: black;">评价</text></van-button>
   </view>
+
+  <van-overlay show="{{ show }}" bind:click="onClickHide">
+    <view class="wrapper">
+      <view class="block" catch:tap="noop">
+        <van-radio-group value="{{ radio }}" bind:change="onChangeRadio">
+          <view wx:for="{{dt.food_list}}" wx:key="f_name">
+            <van-radio name="{{item.f_id}}">{{item.f_name}}</van-radio>
+          </view>
+        </van-radio-group>
+        <van-cell-group>
+          <van-field model:value="{{ content }}" placeholder="填写评论内容"  bind:change="onChangeContent" />
+          <van-rate value="{{ score }}" bind:change="changeScore" />
+        </van-cell-group>
+        <van-button type="warning" bind:tap="submitComment">submit</van-button>
+      </view>
+    </view>
+  </van-overlay>
 </view>

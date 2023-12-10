@@ -30,3 +30,14 @@
   background-color: white;
   border-radius: 20px;
 }
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.block {
+  width: 90%;
+  height: 85%;
+  background-color: #fff;
+}

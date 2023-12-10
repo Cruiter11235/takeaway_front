@@ -10,7 +10,7 @@
 />
 <view class="textbox">
 <text style="font-size: 20px;">{{username}}</text>
-<text style="font-size: 15px;font-family:Arial, Helvetica, sans-serif;margin-top: 5px;">{{phone_number}}</text>
+<text style="font-size: 15px;font-family:Arial, Helvetica, sans-serif;margin-top: 5px;">{{phone}}</text>
 </view>
 </view>
 <view class="middle"></view>
@@ -18,7 +18,7 @@
   <van-cell-group>
   <van-field
     readonly="{{location_on_editing}}"
-    model:value="{{ location }}"
+    model:value="{{ address }}"
     center
     label="地址"
     border="{{ false }}"
@@ -41,7 +41,7 @@
 
   <van-field
     readonly="{{pn_on_editing}}"
-    model:value="{{ phone_number }}"
+    model:value="{{ phone }}"
     center
     label="电话号码"
     border="{{ false }}"

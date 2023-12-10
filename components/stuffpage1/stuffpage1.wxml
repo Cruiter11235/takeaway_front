@@ -1,5 +1,5 @@
-<view wx:for="{{10}}" wx:key="id">
-<order>
-  <van-button size="small">接单</van-button>
+<view wx:for="{{dt}}" wx:key="o_id">
+<order dt="{{item}}">
+  <van-button size="small" bind:tap="takeOrder" id="o-{{item.o_id}}">接单</van-button>
 </order>
 </view>

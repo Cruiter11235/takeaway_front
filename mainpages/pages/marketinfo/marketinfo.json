@@ -9,6 +9,8 @@
     "van-submit-bar": "@vant/weapp/submit-bar/index",
     "f-card":"/components/foodcard/foodcard",
     "comment":"/components/comment/comment",
-    "van-divider": "/miniprogram_npm/@vant/weapp/divider/index"
+    "van-divider": "/miniprogram_npm/@vant/weapp/divider/index",
+    "van-overlay": "@vant/weapp/overlay/index",
+    "van-dialog": "@vant/weapp/dialog/index"
   }
 }

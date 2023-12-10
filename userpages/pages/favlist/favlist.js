@@ -7,7 +7,8 @@ Page({
   data: {
     favmlist:[]
   },
-  getdata(){
+  getdata(c_id){
+    console.log(c_id);
     let that = this;
     wx.request({
       url: 'http://localhost:3000/favlist',
@@ -22,8 +23,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    console.log(options.key)
-    this.getdata();
+    this.getdata(options.c_id);
   },
 
   /**

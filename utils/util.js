@@ -14,6 +14,9 @@ const formatNumber = n => {
   return n[1] ? n : `0${n}`
 }
 
+const getStorageData = (key)=>{
+  
+}
 module.exports = {
   formatTime
 }

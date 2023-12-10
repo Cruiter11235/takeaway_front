@@ -20,8 +20,9 @@ Component({
    */
   methods: {
     goshop(){
+      // 跳转到菜品详情，发送商家id
       wx.navigateTo({
-        url: '/mainpages/pages/marketinfo/marketinfo',
+        url: '/mainpages/pages/marketinfo/marketinfo?m_id='+this.data.info.id,
       })
     }
   }

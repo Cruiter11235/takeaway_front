@@ -4,13 +4,13 @@
 <image class="mimg" src="{{info.url}}" ></image>
 </view>
 <view class="cright" >
-<text class="title">{{info.name}}</text>
+<text class="title">{{info.m_name}}</text>
 <view class="desp">
-<text class="t" style="color: orange;">{{info.score}}分</text>
-<text class="t" style="font-size: 10px;">月售{{info.sellcount}}</text>
-<text class="t" style="font-size: 10px;">人均￥{{info.avecost}}</text>
+<!-- <text class="t" style="color: orange;">{{info.score}}分</text> -->
+<!-- <text class="t" style="font-size: 10px;">月售{{info.sellcount}}</text> -->
+<!-- <text class="t" style="font-size: 10px;">人均￥{{info.avecost}}</text>
 <text class="t" style="font-size: 10px;">起送￥{{info.mincost}}</text>
-<text class="t" style="font-size: 10px;">配送￥{{info.twcost}}</text>
+<text class="t" style="font-size: 10px;">配送￥{{info.twcost}}</text> -->
 </view>
 </view>
 </view>
