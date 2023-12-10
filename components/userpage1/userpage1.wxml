@@ -10,7 +10,7 @@
       <van-grid column-num="4">
         <van-grid-item use-slot wx:for="{{ classlist }}" wx:key="id" link-type="navigateTo" url="/userpages/pages/favlist/favlist?c_id={{item.id}}">
           <image style="width: 100%; height: 60px;" src="{{item.url}}" />
-          {{item.text}}
+          <text style="font-size: 10px;">{{item.text}}</text>
         </van-grid-item>
       </van-grid>
     </view>

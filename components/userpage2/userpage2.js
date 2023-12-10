@@ -1,4 +1,5 @@
 // components/userpage2/userpage2.js
+import {orderDataLoader} from "../../utils/DataLoader";
 Component({
 
   /**
@@ -21,12 +22,18 @@ Component({
   methods: {
     getdata(){
       let that = this;
+      let c_id = wx.getStorageSync('c_id');
       wx.request({
-        url: 'http://localhost:3000/orderlist',
+        method:"POST",
+        url: 'http://localhost:8080/customer/getMyOrders',
+        data:{
+          c_id:c_id
+        },
         success(res){
-          console.log(res.data);
+          let data = res.data.dt;
+          console.log(data);
           that.setData({
-            OrderList:res.data
+            OrderList:orderDataLoader(data)
           })
         }
       })

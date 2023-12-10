@@ -1,4 +1,5 @@
 // components/stuffpage2/stuffpage2.js
+import {DeliveryOrdersLoader} from "../../utils/DataLoader";
 Component({
 
   /**
@@ -23,18 +24,36 @@ Component({
   },
   methods: {
     finishOrder(e){
+      const that = this;
       const o_id = e.target.id.substring(2);
       console.log("完成订单:"+o_id);
+      wx.request({
+        method:"POST",
+        url: 'http://localhost:8080/delivery/finishOrder',
+        data:{
+          o_id:o_id
+        },
+        success(res){
+          console.log(res);
+          that.getdata();
+        }
+      })
     },
     getdata(){
       const that = this;
+      let d_id = wx.getStorageSync('d_id');
       wx.request({
-        url: 'http://localhost:3000/dor',
+        method:"POST",
+        url: 'http://localhost:8080/delivery/getMyOrders',
+        data:{
+          d_id:d_id
+        },
         success(res){
-          console.log(res.data);
+          console.log(res.data.dt);
+          let data = res.data.dt;
           that.setData({
-            dt:res.data
-          })
+            dt:DeliveryOrdersLoader(data)
+          });
         }
       })
     }

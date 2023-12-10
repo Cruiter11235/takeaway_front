@@ -22,15 +22,21 @@ Component({
    */
   attached(){
     const that = this;
+    let d_id = wx.getStorageSync('d_id');
     console.log(wx.getStorageSync('d_id'));
     wx.request({
-      url: 'http://localhost:3000/deliveryinfo',
+      method:"POST",
+      url: 'http://localhost:8080/delivery/getInfo',
+      data:{
+        d_id:d_id
+      },
       success(res){
-        console.log(res.data);
-        const dt = res.data;
+        console.log(res.data.dt);
+        const dt = res.data.dt;
         that.setData({
-          username:dt.username,
-          phone:dt.phone,
+          username:dt.d_username,
+          phone:dt.d_phone,
+          password:dt.d_password,
           ordercount:dt.finishedOrderCount
         })
       }
@@ -38,11 +44,23 @@ Component({
   },
   methods: {
     edit_pn(){
+      let d_id = wx.getStorageSync('d_id');
       this.setData({
         pn_on_editing:!this.data.pn_on_editing
       })
       if(this.data.pn_on_editing){
-        console.log(this.data.phone);
+        wx.request({
+          method:"POST",
+          url: 'http://localhost:8080/delivery/updateInfo',
+          data:{
+            d_id:d_id,
+            d_password:this.data.password,
+            d_phone:this.data.phone
+          },
+          success(res){
+            console.log(res);
+          }
+        })
       }
     },
   }

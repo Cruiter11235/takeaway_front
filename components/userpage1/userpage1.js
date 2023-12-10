@@ -1,53 +1,45 @@
 // components/userpage1/userpage1.js
+import {classimg,marketlistLoader} from "../../utils/DataLoader.js";
 Component({
 
   /**
    * 组件的属性列表
    */
-  properties: {
-  },
+  properties: {},
 
   /**
    * 组件的初始数据
    */
   data: {
-    searchvalue:"",
-    classlist:[],
-    marketlist:[]
+    searchvalue: "",
+    classlist:classimg,
+    marketlist: []
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-    search(){
+    search() {
       console.log(this.data.searchvalue);
     },
     // 拉取商家数据
-    getdata(){
+    getdata() {
       let that = this;
       wx.request({
-        url: 'http://localhost:3000/classimage',
-        success(res){
-          let data = res.data;
+        method:'POST',
+        url: 'http://localhost:8080/customer/getMerchants',
+        data:{},
+        success(res) {
+          let data = res.data.dt;
           that.setData({
-            classlist:data
-          });
-        }
-      });
-      wx.request({
-        url: 'http://localhost:3000/marketlist',
-        success(res){
-          let data = res.data;
-          console.log(data);
-          that.setData({
-            marketlist:data
+            marketlist:marketlistLoader(data)
           })
         }
       })
     }
   },
-  attached(){
+  attached() {
     this.getdata();
   }
 })

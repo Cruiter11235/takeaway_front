@@ -7,10 +7,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+    role: "customer",
     username: "",
     password: ""
   },
-  saveData(k,v){
+  // 缓存数据
+  saveData(k, v) {
     wx.setStorageSync(k, v);
   },
   login() {
@@ -21,31 +23,37 @@ Page({
     const that = this;
     // 测试，获取顾客信息
     wx.request({
-      url: 'http://localhost:3000/userinfo',
-      success(res){
+      method: 'POST',
+      url: 'http://localhost:8080/login',
+      data: {
+        username: this.data.username,
+        password: this.data.password,
+        role: this.data.role
+      },
+      success(res) {
         console.log(res.data);
-        that.saveData("c_id",res.data.c_id);
+        if (res.data.c_id != undefined) {
+          that.saveData("c_id", res.data.c_id);
+        }
+        if (res.data.d_id != undefined) {
+          that.saveData("d_id", res.data.d_id);
+        }
+        if (res.data.status == 0) {
+          switch (that.data.role) {
+            case "customer":
+              wx.navigateTo({
+                url: '/userpages/pages/userindex/userindex',
+              });
+            case "delivery":
+              wx.navigateTo({
+                url: '/stuffpages/pages/stuffindex/stuffindex',
+              });
+          }
+        }else{
+          Notify("登陆失败!");
+        }
       }
     })
-    //测试，获取外卖员信息
-    wx.request({
-      url: 'http://localhost:3000/deliveryinfo',
-      success(res){
-        console.log(res.data);
-        that.saveData("d_id",res.data.d_id);
-      }
-    })
-    // 角色分支跳转逻辑
-    if (this.data.username != "stuff") {
-      wx.navigateTo({
-        url: '/userpages/pages/userindex/userindex',
-      })
-    }else{
-      wx.navigateTo({
-        url: '/stuffpages/pages/stuffindex/stuffindex',
-      })
-    }
-
   },
   /**
    * 生命周期函数--监听页面加载

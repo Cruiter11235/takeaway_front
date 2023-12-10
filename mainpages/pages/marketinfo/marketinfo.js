@@ -1,4 +1,5 @@
 // pages/marketinfo/marketinfo.js
+import {foodlistLoader,commentlistLoader} from "../../../utils/DataLoader";
 Page({
 
   /**
@@ -36,23 +37,37 @@ noop() {},
     console.log(m_id);
     let that = this;
     wx.request({
-      url: 'http://localhost:3000/foodlist',
+      method:"POST",
+      url: 'http://localhost:8080/customer/getMeals',
+      data:{
+        m_id:m_id
+      },
       success(res){
+        console.log(res.data.dt);
+        let data = res.data.dt;
         that.setData({
-          foodlist:res.data
-        })
+          foodlist:foodlistLoader(data)
+        });
       }
     });
     wx.request({
-      url: 'http://localhost:3000/commentlist',
+      method:"POST",
+      url: 'http://localhost:8080/customer/getComments',
+      data:{
+        m_id:m_id
+      },
       success(res){
+        console.log(res.data);
+        let data = res.data.dt;
         that.setData({
-          commentlist:res.data
+          commentlist:commentlistLoader(data)
         });
       }
     });
   },
   onSubmit(){
+    let c_id = wx.getStorageSync('c_id');
+    let m_id = this.data.m_id;
     let submitlist = [];
     // 提交订单
     console.log(`总价格${this.data.pricesum/100}`);
@@ -60,10 +75,22 @@ noop() {},
     comps.forEach((el)=>{
       submitlist.push({
         "f_id":el.data.info.id,
-        "count":el.data.count
+        "f_count":el.data.count
       })
     });
     console.log(submitlist,this.data.m_id,wx.getStorageSync('c_id'));
+    wx.request({
+      method:"POST",
+      url: 'http://localhost:8080/customer/createOrder',
+      data:{
+        c_id:c_id,
+        m_id:m_id,
+        food_list:submitlist
+      },
+      success(res){
+        console.log(res);
+      }
+    })
   },
   createReport(){
     this.setData({
@@ -71,10 +98,25 @@ noop() {},
     });
   },
   submitReport(){
+    let m_id = this.data.m_id;
+    let c_id = wx.getStorageSync('c_id');
+    let content = this.data.ReportContent;
     console.log("已提交举报",this.data.m_id,wx.getStorageSync('c_id'));
     this.setData({
       ReportContent:""
     });
+    wx.request({
+      method:'POST',
+      url: 'http://localhost:8080/customer/createReport',
+      data:{
+        c_id:c_id,
+        m_id:m_id,
+        content:content
+      },
+      success(res){
+        console.log(res);
+      }
+    })
   },
   // 加载生命周期
   onLoad(options) {

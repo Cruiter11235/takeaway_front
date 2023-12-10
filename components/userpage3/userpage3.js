@@ -26,18 +26,23 @@ Component({
    */
   attached(){
     const that = this;
-    console.log(wx.getStorageSync('c_id'));
+    let c_id = wx.getStorageSync('c_id');
+
     wx.request({
-      url: 'http://localhost:3000/userinfo',
+      method:"POST",
+      url: 'http://localhost:8080/customer/getInfo',
+      data:{
+        c_id:c_id
+      },
       success(res){
-        const dt = res.data;
-        console.log(res.data);
+        const data = res.data.dt;
+        console.log(data);
         that.setData({
-          address:dt.address,
-          name:dt.name,
-          username:dt.username,
-          password:dt.password,
-          phone:dt.phone
+          address:data.c_address,
+          name:data.c_name,
+          username:data.c_username,
+          password:data.c_password,
+          phone:data.c_phone
         })
       }
     });
@@ -49,7 +54,7 @@ Component({
       })
       if(this.data.location_on_editing){
         // 这里发送更新请求
-        console.log(this.data.address);
+        this.updateData();
       }
     },
     edit_pn(){
@@ -57,7 +62,7 @@ Component({
         pn_on_editing:!this.data.pn_on_editing
       })
       if(this.data.pn_on_editing){
-        console.log(this.data.phone);
+        this.updateData();
       }
     },
     edit_name(){
@@ -65,8 +70,26 @@ Component({
         name_on_editing:!this.data.name_on_editing
       })
       if(this.data.name_on_editing){
-        console.log(this.data.name);
+        this.updateData();
       }
+    },
+    updateData(){
+      const that = this;
+      let c_id = wx.getStorageSync('c_id');
+      wx.request({
+        method:'POST',
+        url: 'http://localhost:8080/customer/updateInfo',
+        data:{
+          c_id:c_id,
+          c_password:that.data.password,
+          c_address:that.data.address,
+          c_name:that.data.name,
+          c_phone:that.data.phone
+        },
+        success(res){
+          console.log(res);
+        }
+      })
     }
   }
 })

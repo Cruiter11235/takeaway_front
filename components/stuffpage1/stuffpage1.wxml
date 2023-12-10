@@ -3,3 +3,4 @@
   <van-button size="small" bind:tap="takeOrder" id="o-{{item.o_id}}">接单</van-button>
 </order>
 </view>
+<view style="height: 50px;"></view>

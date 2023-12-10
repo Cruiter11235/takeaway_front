@@ -27,11 +27,11 @@ Component({
       this.setData({
         count:this.data.count+1
       });
-      let param =  parseFloat(this.data.price);
+      let param =  parseFloat(this.data.info.price);
       this.triggerEvent("changeprice",param)
     },
     minuscount(){    
-      let param =  parseFloat(this.data.price)*-1;
+      let param =  parseFloat(this.data.info.price)*-1;
       if(this.data.count>=1){
         this.triggerEvent("changeprice",param);
       }

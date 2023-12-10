@@ -10,7 +10,7 @@
 
   <view class="middle">
     <text wx:for="{{dt.food_list}}">
-      {{item.f_name}}x{{item.count}}
+      {{item.f_name}} x {{item.count}}
     </text>
   </view>
   <van-divider />

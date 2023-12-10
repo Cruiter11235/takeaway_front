@@ -1,11 +1,16 @@
 <!--pages/welcome/welcome.wxml-->
 <view class="container" style="height: 100vh;width: 100vw;">
   <view id="inputArea" style="height: 100%;display: flex;flex-direction: column;justify-content: center;align-items: center;width: 70%;">
-  <text style="margin-bottom: 10px;color:grey;">外卖点餐系统</text>
-      <van-field label="用户名" model:value="{{ username }}" placeholder="请输入用户名" border="{{ true }}" />
-      <van-field label="密码" model:value="{{ password }}" placeholder="密码" border="{{ true }}"  style="margin-top: 5px;" />
-      <van-button type="primary" style="position: relative;top: 50px;width: 100px;" round size="large"
-      color="linear-gradient(to right, #4bb0ff, #6149f6)" bind:tap="login">登录</van-button>
+    <text style="margin-bottom: 10px;color:grey;">外卖点餐系统</text>
+    <van-field label="用户名" model:value="{{ username }}" placeholder="请输入用户名" border="{{ true }}" />
+    <van-field label="密码" model:value="{{ password }}" placeholder="密码" border="{{ true }}" style="margin-top: 5px;" />
+    <view style="margin-top: 20px;">
+      <van-radio-group model:value="{{ role }}" bind:change="onChange" direction="horizontal">
+        <van-radio name="customer">顾客</van-radio>
+        <van-radio name="delivery">外卖员</van-radio>
+      </van-radio-group>
+    </view>
+    <van-button type="primary" style="position: relative;top: 50px;width: 100px;" round size="large" color="linear-gradient(to right, #4bb0ff, #6149f6)" bind:tap="login">登录</van-button>
   </view>
   <van-notify id="van-notify" />
 </view>

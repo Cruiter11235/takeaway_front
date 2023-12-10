@@ -3,3 +3,4 @@
   <van-button size="small" id="o>{{item.o_id}}" bind:tap="finishOrder">完成</van-button>
 </order>
 </view>
+<view style="height: 50px;"></view>
